@@ -8,7 +8,7 @@
   <packaging>jar</packaging>
 
   <name>jdksavdecc-java</name>
-  <url>http://jdksavdecc-java.statusbar.com/</url>
+  <url>http://avb.statusbar.com/code/jdksavdecc-java/</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
