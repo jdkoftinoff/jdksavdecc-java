@@ -184,4 +184,143 @@ public class AVTPDU extends PDU {
         return getStreamID( data );
     }
 
+    public final static int control_data_offset = 0;
+    public final static int control_data_mask = 0xf;
+    public final static int control_data_shift = (31 - 15);
+
+    public final static void setControlData(ByteBuffer data, int newValue) {
+        setBitField(data, control_data_offset, control_data_mask, control_data_shift, newValue);
+    }
+
+    public void setControlData(int newValue) {
+        setControlData(data, newValue);
+    }
+
+    public final static int getControlData(ByteBuffer data) {
+        return getBitField(data, control_data_offset, control_data_mask, control_data_shift);
+    }
+
+    public int getControlData() {
+        return getControlData(data);
+    }
+
+    
+    public final static int status_offset = 0;
+    public final static int status_mask = 0x1f;
+    public final static int status_shift = (31 - 20);
+
+    public final static void setStatus(ByteBuffer data, int newValue) {
+        setBitField(data, status_offset, status_mask, status_shift, newValue);
+    }
+
+    public void setStatus(int newValue) {
+        setStatus(data, newValue);
+    }
+
+    public final static int getStatus(ByteBuffer data) {
+        return getBitField(data, status_offset, status_mask, status_shift);
+    }
+
+    public int getStatus() {
+        return getStatus(data);
+    }
+    
+    public final static int control_data_length_offset = 0;
+    public final static int control_data_length_mask = 0x7ff;
+    public final static int control_data_length_shift = (31 - 31);
+
+    public final static void setControlDataLength(ByteBuffer data, int newValue) {
+        setBitField(data, control_data_length_offset, control_data_length_mask, control_data_length_shift, newValue);
+    }
+
+    public void setControlDataLength(int newValue) {
+        setControlDataLength(data, newValue);
+    }
+
+    public final static int getControlDataLength(ByteBuffer data) {
+        return getBitField(data, control_data_length_offset, control_data_length_mask, control_data_length_shift);
+    }
+
+    public int getControlDataLength() {
+        return getControlDataLength(data);
+    }
+
+    public final static int control_packet_additional_offset = 12;
+    
+    public final static int avtp_timestamp_offset = 12;
+    
+    public final static void setAVTPTimeStamp( ByteBuffer data, int newValue ) {
+    	setQuadletField(data, avtp_timestamp_offset, newValue );
+    }
+    
+    public void setAVTPTimeStamp( int newValue ) {
+    	setAVTPTimeStamp( data, newValue );
+    }
+    
+    public final static int getAVTPTimeStamp( ByteBuffer data ) {
+    	return getQuadletField(data,avtp_timestamp_offset );
+    }
+    
+    public int getAVTPTimeStamp() {
+    	return getAVTPTimeStamp( data );
+    }
+    
+    
+    public final static int format_info_offset = 16;
+    
+    public final static void setFormatInfo( ByteBuffer data, int newValue ) {
+    	setQuadletField(data, format_info_offset, newValue );
+    }
+    
+    public void setFormatInfo( int newValue ) {
+    	setFormatInfo( data, newValue );
+    }
+    
+    public final static int getFormatInfo( ByteBuffer data ) {
+    	return getQuadletField(data,format_info_offset );
+    }
+
+    public int getFormatInfo() {
+    	return getFormatInfo( data );
+    }
+    
+    
+    public final static int stream_data_length_offset = 20;
+    
+    public final static void setStreamDataLength( ByteBuffer data, short newValue ) {
+    	setDoubletField(data, stream_data_length_offset, newValue );
+    }
+    
+    public void setStreamDataLength( short newValue ) {
+    	setStreamDataLength( data, newValue );
+    }
+    
+    public final static short getStreamDataLength( ByteBuffer data ) {
+    	return getDoubletField(data,stream_data_length_offset );
+    }
+    
+    public short getStreamDataLength() {
+    	return getStreamDataLength(data);
+    }
+
+    public final static int protocol_specific_info_offset = 22;
+    
+    public final static void setProtocolSpecificInfo( ByteBuffer data, short newValue ) {
+    	setDoubletField(data, protocol_specific_info_offset, newValue );
+    }
+    
+    public void setProtocolSpecificInfo( short newValue ) {
+    	setProtocolSpecificInfo( data, newValue );
+    }
+    
+    public final static short getProtocolSpecificInfo( ByteBuffer data ) {
+    	return getDoubletField(data,protocol_specific_info_offset );
+    }
+    
+    public short getProtocolSpecificInfo() {
+    	return getProtocolSpecificInfo(data);
+    }
+    
+    public final static int stream_data_payload_offset = 24;
+    
 }
